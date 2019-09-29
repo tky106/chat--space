@@ -1,11 +1,13 @@
 %header
-  .header-top
-    %p グループを作成しました
-  .header-left
-    %p test-user
-  .header-right
-    %p test-group
-    =link_to("Edit", "/")
+  .header
+    .header__header-top
+      %p グループを作成しました
+    .header__header-left
+      %p test-user
+    .header__header-right
+      %p.header__header-right--header-group test-group
+      %p.header__header-right--header-name Members: seo neko
+      =link_to "Edit", root_path, class: "edit"
 .contents
   .contents__left-content
     %p test-group
