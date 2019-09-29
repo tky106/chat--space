@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: "tweets#index"
+  root to: "messages#index"
 end
