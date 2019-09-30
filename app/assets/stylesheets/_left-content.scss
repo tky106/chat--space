@@ -1,6 +1,7 @@
 // @import "variable";
 body, html {
   height: 100%;
+  
 }
  .header {
    background-color: #38AEF0;
@@ -9,15 +10,16 @@ body, html {
    }
 .contents {
   height: 100%;
-  width: 100vh;
+
   &__left-content {
+    float: left;
     width: 300px;
     background-color: #2f3e51;
     height: 100%;
     &--left-header {
-      height: 96px;
+      height: 109px;
       background-color: #253141;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid #2f3e51;;
       line-height: 96px;
       padding: 0 20px;
       &__left-header-text {

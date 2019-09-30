@@ -11,62 +11,54 @@
       %p.contents__left-content--left-box__sample-group sample-group
       %p.contents__left-content--left-box__hello hello! 
   .contents__right-content
-
     .contents__right-content--right-header
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--#     .header__header-left
--#       %p test-user
--#     .header__header-right
--#       %p.header__header-right--header-group test-group
--#       %p.header__header-right--header-name Members: seo neko
--#       =link_to "Edit", root_path, class: "edit"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--# .contents
--#   .contents__left-content
--#     %p test-group
--#     %p さようなら！
--#     %p sample-group
--#     %p hello!
--#     %p example
--#     %p まだメッセージがありません
-
--#   .contents__main-content
--#     %p test-user
--#     %p こんにちは！
--#     %p test-user
--#     %p さようなら！
--# %footer  
--#   .footer-left
-    
+      .contents__right-content--right-header__test-edit
+        %p.contents__right-content--right-header__test-edit--test test-group
+        %div.contents__right-content--right-header__test-edit--edit 
+          = link_to "Edit", "/"
+        %p.contents__right-content--right-header__member Member : tky
       
--#     %end  
--#   .footer-right
+    .contents__right-content--right-box
+      %div.contents__right-content--right-box__test-date
+        %p.contents__right-content--right-box__test-date--test test-user  
+        %p.contents__right-content--right-box__test-date--date 2019/09/29(Sun) 15:42:32 
+      %p.contents__right-content--right-box__hello こんにちは！
+      %p.contents__right-content--right-box__test2 test-user
+      %p.contents__right-content--right-box__date2 2019/09/29(Sun) 15:42:50 
+      %p.contents__right-content--right-box__good-bye さようなら！
+
+    .contents__right-content--form-box
+      %form(action="/")
+        .contents__right-content--form-box__form
+          .contents__right-content--form-box__form--text
+            %input.initial-message(type="text" placeholder="type a message")
+          .contents__right-content--form-box__form--submit   
+            %input.send(type="submit" value="Send")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
