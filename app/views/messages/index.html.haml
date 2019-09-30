@@ -5,6 +5,9 @@
   .contents__left-content
     .contents__left-content--left-header
       %p.contents__left-content--left-header__left-header-text test-user
+      = fa_icon "gear", class: "gear"
+      = fa_icon 'edit', class: "edit"
+
     .contents__left-content--left-box
       %p.contents__left-content--left-box__test-group test-group
       %p.contents__left-content--left-box__good-bye さようなら！
@@ -17,7 +20,6 @@
         %div.contents__right-content--right-header__test-edit--edit 
           = link_to "Edit", "/"
         %p.contents__right-content--right-header__member Member : tky
-      
     .contents__right-content--right-box
       %div.contents__right-content--right-box__test-date
         %p.contents__right-content--right-box__test-date--test test-user  
@@ -28,12 +30,15 @@
       %p.contents__right-content--right-box__good-bye さようなら！
 
     .contents__right-content--form-box
+      
       %form(action="/")
         .contents__right-content--form-box__form
           .contents__right-content--form-box__form--text
             %input.initial-message(type="text" placeholder="type a message")
+            = fa_icon 'picture-o', class: "picture"
           .contents__right-content--form-box__form--submit   
             %input.send(type="submit" value="Send")
+            
 
 
 
