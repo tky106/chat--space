@@ -1,47 +1,31 @@
 // @import "variable";
-
+body, html {
+  height: 100%;
+}
  .header {
    background-color: #38AEF0;
    text-align: center;
    color: white;
    }
-//   &__header-left {
-//     float: left;
-//     background-color: #253141;
-//     width: 300px;
-//     height: 100%;
-//     padding: 0 20px;
-//     line-height: 96px;
-//     font-size: 16px;
-//     font-weight: bold;
-//     color: #ffffff;
-//     border-bottom: 1px solid #eeeeee;
-//   }
-//   &__header-right {
-//     padding: 0 40px;
-//     height: 100%;
-//     border-bottom: 1px solid #eeeeee;
-//     &--header-group {
-//       padding: 35px 0 15px 0;
-//       float: left;
-//       font-size: 20px;
-//       color: #333333;
-//     }
-//     &--header-name {
-//       font-size: 12px;
-//       color: #999999;
-//     }
-//   }
-
-// }
-// .edit {
-//   float: right;
-//   color: #38AEF0;
-//   padding-top: 28px;
-//   border: 1px solid #38AEF0;
-//   padding: 0 20px;
-//   height: 40px;
-// }
-// .contents__left-content {
-//   width: 300px;
-// }
+.contents {
+  height: 100%;
+  width: 100vh;
+  &__left-content {
+    width: 300px;
+    background-color: #2f3e51;
+    height: 100%;
+    &--left-header {
+      height: 96px;
+      background-color: #253141;
+      border-bottom: 1px solid #eeeeee;
+      line-height: 96px;
+      padding: 0 20px;
+      &__left-header-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    }
+  }
+  
+}
