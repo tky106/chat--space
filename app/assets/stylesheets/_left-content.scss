@@ -1,0 +1,68 @@
+// @import "variable";
+body, html {
+  height: 100%;
+  
+}
+ .header {
+   background-color: #38AEF0;
+   text-align: center;
+   color: white;
+   }
+.contents {
+  height: 100%;
+
+  &__left-content {
+    float: left;
+    width: 300px;
+    background-color: #2f3e51;
+    height: 100%;
+    &--left-header {
+      height: 109px;
+      background-color: #253141;
+      border-bottom: 1px solid #2f3e51;;
+      line-height: 96px;
+      padding: 0 20px;
+      &__left-header-text {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      
+    }
+    &--left-box {
+      color: #ffffff;
+      padding:20px 20px 0 20px ;
+      &__test-group {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__good-bye {
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+      &__sample-group {
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &__hello {
+        font-size: 11px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+}
+.gear {
+  color: white;
+  float: right;
+  line-height: 100px;
+  margin-left: 5px;
+}
+.edit {
+  color: white;
+  float: right;
+  line-height: 100px;
+}
