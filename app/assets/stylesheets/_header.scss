@@ -26,6 +26,28 @@ body, html {
         color: #ffffff;
       }
     }
+    &--left-box {
+      color: #ffffff;
+      padding:20px 20px 0 20px ;
+      &__test-group {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__good-bye {
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+      &__sample-group {
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &__hello {
+        font-size: 11px;
+        font-weight: bold;
+      }
+    }
   }
   
 }
