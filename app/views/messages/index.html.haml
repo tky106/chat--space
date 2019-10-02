@@ -1,12 +1,15 @@
 %header
-  .header
-    %p グループを作成しました
+  -# .header
+  -#   %p グループを作成しました
 .contents
   .contents__left-content
     .contents__left-content--left-header
-      %p.contents__left-content--left-header__left-header-text test-user
-      = fa_icon "gear", class: "gear"
-      = fa_icon 'edit', class: "edit"
+      %p.contents__left-content--left-header__left-header-text 
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        = fa_icon "cog", class: "gear"
+
+      = fa_icon "edit", class: "edit"
 
     .contents__left-content--left-box
       %p.contents__left-content--left-box__test-group test-group
