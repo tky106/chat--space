@@ -14,9 +14,10 @@
     .contents__left-content--left-box
       - current_user.groups.each do |group|
         = link_to group_messages_path(group)  do
-          %p.contents__left-content--left-box__name 
+          .contents__left-content--left-box__name 
             = group.name
-        %p.contents__left-content--left-box__message メッセージはまだありません。
+        .contents__left-content--left-box__message 
+          = group.show_last_message  
       -# %p.contents__left-content--left-box__sample-group sample-group
       -# %p.contents__left-content--left-box__hello hello! 
   .contents__right-content
@@ -27,21 +28,28 @@
           = link_to "Edit", "/"
         %p.contents__right-content--right-header__member Member : tky
     .contents__right-content--right-box
-      %div.contents__right-content--right-box__test-date
-        %p.contents__right-content--right-box__test-date--test test-user  
-        %p.contents__right-content--right-box__test-date--date 2019/09/29(Sun) 15:42:32 
-      %p.contents__right-content--right-box__hello こんにちは！
-      %p.contents__right-content--right-box__test2 test-user
-      %p.contents__right-content--right-box__date2 2019/09/29(Sun) 15:42:50 
-      %p.contents__right-content--right-box__good-bye さようなら！
+      = render @messages
+      -# %div.contents__right-content--right-box__test-date
+      -#   .contents__right-content--right-box__test-date--test test-user  
+      -#   .contents__right-content--right-box__test-date--date 
+      -# %p.contents__right-content--right-box__hello aa
+       
+      -# %p.contents__right-content--right-box__test2 test-user
+      -# %p.contents__right-content--right-box__date2 2019/09/29(Sun) 15:42:50 
+      -# %p.contents__right-content--right-box__good-bye さようなら！
 
     .contents__right-content--form-box
       
-      %form(action="/")
+      -# %form(action="/")
+      = form_for [@group, @message] do |f|
         .contents__right-content--form-box__form
           .contents__right-content--form-box__form--text
-            %input.initial-message(type="text" placeholder="type a message")
-            = fa_icon 'picture-o', class: "picture"
+            -# %input.initial-message(type="text" placeholder="type a message")
+            = f.text_field :content, class: "initial-message", placeholder: "type a message"
+            = f.label :image do
+              = fa_icon 'picture-o', class: "picture"
+              = f.file_field :image, class: "hidden"
           .contents__right-content--form-box__form--submit   
-            %input.send(type="submit" value="Send")
+            -# %input.send(type="submit" value="Send")
+            = f.submit "Send", class: "send"
             

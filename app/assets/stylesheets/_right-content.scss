@@ -58,22 +58,22 @@
         font-size: 14px;
         margin-bottom: 40px;
       }
-      &__test2 {
-        font-size: 16px;
-        font-weight: bold;
-        color: #434a54;
-        float: left;
-        margin-right: 10px;
-      }
-      &__date2 {
-        font-size: 12px;
-        color: #999999;
-      }
-      &__good-bye {
-        clear: both;
-        color: #434a54;
-        font-size: 14px;
-      }
+      // &__test2 {
+      //   font-size: 16px;
+      //   font-weight: bold;
+      //   color: #434a54;
+      //   float: left;
+      //   margin-right: 10px;
+      // }
+      // &__date2 {
+      //   font-size: 12px;
+      //   color: #999999;
+      // }
+      // &__good-bye {
+      //   clear: both;
+      //   color: #434a54;
+      //   font-size: 14px;
+      // }
       
     }
     &--form-box {
@@ -122,5 +122,11 @@ input {
 .picture {
   position: absolute;
   top: 16px;
-  left: 930px
+  left: 930px;
+  cursor: pointer;
+}
+
+.hidden {
+  
+  display: none;
 }
