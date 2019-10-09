@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   
 
-  
+  def index
+
+  end
   
   def edit
     
@@ -15,6 +17,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.whrere("title LIKE(?)", "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+  end
+
+  private
   def user_params
     params.require(:user).permit(:name, :email)
   end
