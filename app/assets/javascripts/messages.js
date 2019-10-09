@@ -2,9 +2,8 @@ $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
     var html = `<div class="contents__right-content--right-box__test-date">
                   <div class="contents__right-content--right-box__test-date--test">
-                    <p>    
                       ${message.user_name}
-                    </p>  
+                      ${message.image}
                   </div>
                   <div class="contents__right-content--right-box__test-date--date">
                     ${message.date}
@@ -41,7 +40,7 @@ $(document).on('turbolinks:load', function() {
     .done(function(data) {
       var html = buildHTML(data);
       $(".contents__right-content--right-box").append(html);
-      $(".initial-message").val("");
+      $("#new_message")[0].reset();
       scrollBottom();
     })
     .fail(function() {
