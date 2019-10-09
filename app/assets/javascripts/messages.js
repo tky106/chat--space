@@ -3,18 +3,17 @@ $(document).on('turbolinks:load', function() {
     var html = `<div class="contents__right-content--right-box__test-date">
                   <div class="contents__right-content--right-box__test-date--test">
                       ${message.user_name}
-                      ${message.image}
+                      
                   </div>
                   <div class="contents__right-content--right-box__test-date--date">
                     ${message.date}
                   </div>
                 </div>
                 <div class="contents__right-content--right-box__hello">
-                  
                   ${message.content}
-                  
-                  
-                </div>`
+                </div>
+                <div><img src="${ message.image}"></div>`
+                 
     return html;
   }
   function scrollBottom(){
