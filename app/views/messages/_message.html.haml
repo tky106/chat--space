@@ -3,7 +3,7 @@
     = message.user.name
   .contents__right-content--right-box__test-date--date 
     = message.created_at.strftime("%Y/%m/%d %H:%M")
-.contents__right-content--right-box__hello 
+.contents__right-content--right-box__hello
   - if message.content.present?
     %p
       = message.content
