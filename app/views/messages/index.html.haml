@@ -26,13 +26,12 @@
         - current_user.groups.each do |group|
           .contents__right-content--right-header__test-edit--test 
             = group.name
+        %p.contents__right-content--right-header__member  Member : tky
         %div.contents__right-content--right-header__test-edit--edit 
           = link_to edit_group_path(@group) do
             Edit
+          
             
-        - @group.users.each do |user|    
-          .contents__right-content--right-header__member 
-            = user.name
     .contents__right-content--right-box
       = render @messages
       -# %div.contents__right-content--right-box__test-date

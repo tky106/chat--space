@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function() {
       $("#chat-group-users").empty();
       return;
     }
-    console.log(input);
+  
     $.ajax({
       type: "GET",
       url: "/users",
@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function() {
       dataType: "json"
     })
     .done(function(users) {
-      // console.log(users)
+    
        $("#chat-group-users").empty();
        users.forEach(function(user) {
           appendUser(user);
