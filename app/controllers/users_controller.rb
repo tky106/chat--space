@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-  
 
   def index
-
+    @user = User.new
+    @users = User.where("name LIKE(?)", "%#{params[:keyword]}%")
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
   
   def edit
@@ -17,12 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
-    @users = User.whrere("title LIKE(?)", "%#{params[:keyword]}%")
-    respond_to do |format|
-      format.html
-      format.json
-  end
+  
 
   private
   def user_params

@@ -23,10 +23,16 @@
   .contents__right-content
     .contents__right-content--right-header
       .contents__right-content--right-header__test-edit
-        %p.contents__right-content--right-header__test-edit--test test-group
+        - current_user.groups.each do |group|
+          .contents__right-content--right-header__test-edit--test 
+            = group.name
         %div.contents__right-content--right-header__test-edit--edit 
-          = link_to "Edit", "/"
-        %p.contents__right-content--right-header__member Member : tky
+          = link_to edit_group_path(@group) do
+            Edit
+            
+        - @group.users.each do |user|    
+          .contents__right-content--right-header__member 
+            = user.name
     .contents__right-content--right-box
       = render @messages
       -# %div.contents__right-content--right-box__test-date
