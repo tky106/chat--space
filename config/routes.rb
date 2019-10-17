@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
   end
 end
