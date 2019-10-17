@@ -1,23 +1,23 @@
 $(document).on('turbolinks:load', function() {
   var buildMessageHTML = function(message) {
     if (message.content && message.image.url) {
-      // var t = message.content 
-      //data-idが反映されるようにしている
+      var content = message.content
+      var image = message.image
       var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
-          ${message.user_name}
-          
+          ${message.user_name}       
       </div>
       <div class="contents__right-content--right-box__test-date--date">
         ${message.date}
       </div>
     </div>
     <div class="contents__right-content--right-box__hello" data-id="${message.id}">
-      ${message.content}
+      ${content}
     </div>
-    <div><img src="${ message.image}"></div>`
+    <div><img src="${image}"></div>`
 } else if (message.content) {
-//同様に、data-idが反映されるようにしている
+var content = message.content  
+var noImage = ""
 var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
           ${message.user_name}
@@ -28,10 +28,12 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
       </div>
     </div>
     <div class="contents__right-content--right-box__hello" data-id="${message.id}">
-      ${message.content}
-    </div>`
+      ${content}
+    </div>
+    <div>${noImage}</div>`
 } else if (message.image.url) {
-//同様に、data-idが反映されるようにしている
+  var noContent = ""
+  var image = message.image
 var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
           ${message.user_name}
@@ -41,36 +43,36 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
         ${message.date}
       </div>
     </div>
-    <div><img src="${ message.image}"></div>`
+    <div class="contents__right-content--right-box__hello" data-id="${message.id}">
+      ${noContent}
+    </div>
+    <div><img src="${image}"></div>`
     
   };
     return html;
   }
   
   var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+
     last_message_id = $(".contents__right-content--right-box__test-date:last, .contents__right-content--right-box__hello:last").data("id");
     
-    //  if (root_path) {
+  
       $.ajax({
-        //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+     
         url: "api/messages",
-        //ルーティングで設定した通りhttpメソッドをgetに指定
+        
         type: 'get',
         dataType: 'json',
-        //dataオプションでリクエストに値を含める
+        
         data: {id: last_message_id}
       })
 
     .done(function(messages) {
-      //追加するHTMLの入れ物を作る
-      
-      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+    
       messages.forEach(function(message) {
         html = buildMessageHTML(message)
         $(".contents__right-content--right-box").append(html);
-      //メッセージが入ったHTMLを取得
-      //メッセージを追加
+  
       })
       $(".contents__right-content--right-box").animate({scrollTop: $(".contents__right-content--right-box")[0].scrollHeight});
     })
@@ -81,8 +83,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
   function buildHTML(message) {
 
     if (message.content && message.image.url) {
-      // var t = message.content 
-      //data-idが反映されるようにしている
+     
       var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
           ${message.user_name}
@@ -97,7 +98,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
     </div>
     <div><img src="${ message.image}"></div>`
 } else if (message.content) {
-//同様に、data-idが反映されるようにしている
+
 var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
           ${message.user_name}
@@ -111,7 +112,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
       ${message.content}
     </div>`
 } else if (message.image.url) {
-//同様に、data-idが反映されるようにしている
+
 var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
       <div class="contents__right-content--right-box__test-date--test">
           ${message.user_name}
