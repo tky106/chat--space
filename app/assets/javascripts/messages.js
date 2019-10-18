@@ -28,26 +28,18 @@ $(document).on('turbolinks:load', function() {
   }
   
   var reloadMessages = function() {
-
     last_message_id = $(".contents__right-content--right-box__test-date:last, .contents__right-content--right-box__hello:last").data("id");
-    
-  
-      $.ajax({
-     
+      $.ajax({     
         url: "api/messages",
-        
         type: 'get',
         dataType: 'json',
-        
         data: {id: last_message_id}
       })
 
     .done(function(messages) {
-    
       messages.forEach(function(message) {
         html = buildMessageHTML(message)
         $(".contents__right-content--right-box").append(html);
-  
       })
       $(".contents__right-content--right-box").animate({scrollTop: $(".contents__right-content--right-box")[0].scrollHeight});
     })
@@ -83,7 +75,7 @@ $(document).on('turbolinks:load', function() {
  
     return html;
   }
-  }
+  
   function scrollBottom(){
     var target = $('.contents__right-content--right-box__test-date, .contents__right-content--right-box__hello').last();
     var position = target.offset().top + $('.contents__right-content--right-box').scrollTop();
@@ -119,4 +111,5 @@ $(document).on('turbolinks:load', function() {
   })
   setInterval(reloadMessages, 5000);
 
-})    
+})
+ 
