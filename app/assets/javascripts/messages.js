@@ -1,16 +1,8 @@
 $(document).on('turbolinks:load', function() {
   var buildMessageHTML = function(message) {
-    var content =
-      (message.content && message.image.url) ? message.content
-    : (message.content) ? message.content
-    : (message.image.url) ? ""
-      
-    var image =
-      (message.content && message.image.url) ? message.image
-    : (message.content) ? message.image
-    : (message.image.url) ? ""
-      
-
+    if (message.content && message.image.url) {
+      var content = message.content
+      var image = message.image
       var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
                     <div class="contents__right-content--right-box__test-date--test">
                         ${message.user_name}       
@@ -23,7 +15,40 @@ $(document).on('turbolinks:load', function() {
                     ${content}
                   </div>
                   <div><img src="${image}"></div>`
- 
+} else if (message.content) {
+var content = message.content  
+var noImage = ""
+var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
+              <div class="contents__right-content--right-box__test-date--test">
+                  ${message.user_name}
+                  
+              </div>
+              <div class="contents__right-content--right-box__test-date--date">
+                ${message.date}
+              </div>
+            </div>
+            <div class="contents__right-content--right-box__hello" data-id="${message.id}">
+              ${content}
+            </div>
+            <div>${noImage}</div>`
+} else if (message.image.url) {
+  var noContent = ""
+  var image = message.image
+var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
+              <div class="contents__right-content--right-box__test-date--test">
+                  ${message.user_name}
+                  
+              </div>
+              <div class="contents__right-content--right-box__test-date--date">
+                ${message.date}
+              </div>
+            </div>
+            <div class="contents__right-content--right-box__hello" data-id="${message.id}">
+              ${noContent}
+            </div>
+            <div><img src="${image}"></div>`
+    
+  };
     return html;
   }
   
