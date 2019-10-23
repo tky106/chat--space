@@ -22,11 +22,14 @@
       -# %p.contents__left-content--left-box__hello hello! 
   .contents__right-content
     .contents__right-content--right-header
-      .contents__right-content--right-header__test-edit
-        - current_user.groups.each do |group|
-          .contents__right-content--right-header__test-edit--test 
-            = group.name
-        %p.contents__right-content--right-header__member  Member : tky
+      .contents__right-content--right-header__test-edit 
+        .contents__right-content--right-header__test-edit--test 
+          = @group.name
+        - @group.users.each do |user|
+          %p.contents__right-content--right-header__member  
+            = user.name
+          
+          
         %div.contents__right-content--right-header__test-edit--edit 
           = link_to edit_group_path(@group) do
             Edit

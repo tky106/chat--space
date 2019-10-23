@@ -99,9 +99,11 @@ li {
     cursor: pointer;
     &--add {
       color: #38aef0;
+      float: right;
     }
     &--remove {
       color: #f05050;
+      float: right;
     }
   }
 }

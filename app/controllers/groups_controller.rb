@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
   def index
-    
+    @group = Group.find(params[:id])
   end
   
   def new
@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-
+    @group = Group.find(params[:id])
   end
 
   def update
@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
        render :edit 
     end
   end
+
 
   private
   def group_params

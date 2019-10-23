@@ -53,10 +53,13 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
   }
   
   var reloadMessages = function() {
-    last_message_id = $(".contents__right-content--right-box__test-date:last, .contents__right-content--right-box__hello:last").data("id");
+    if(window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $(".contents__right-content--right-box__test-date:last, .contents__right-content--right-box__hello:last").data("id");
+    
+    
       $.ajax({     
         url: "api/messages",
-        type: 'get',
+        type: 'GET',
         dataType: 'json',
         data: {id: last_message_id}
       })
@@ -70,7 +73,9 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
     })
     .fail(function() {
       alert('error');
+    
     });
+  }
   };
   
   function scrollBottom(){
@@ -106,7 +111,8 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
       $('.send').prop('disabled', false);
     })
   })
-  setInterval(reloadMessages, 5000);
+  // if path match = 正規表現 条件式 groups id 
+    setInterval(reloadMessages, 5000);
 
 })
  
