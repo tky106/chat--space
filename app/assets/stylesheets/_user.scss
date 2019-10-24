@@ -142,8 +142,11 @@
 }
 
 .chat-group-user {
+  // display: flex;
+  // flex-direction: column;
   &__name {
     display: block;
+
   }
   
 }

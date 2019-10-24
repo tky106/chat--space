@@ -27,6 +27,7 @@ body, html {
         font-size: 16px;
         font-weight: bold;
         color: #ffffff;
+        
       }
       
     }
@@ -37,6 +38,7 @@ body, html {
         font-size: 15px;
         font-weight: bold;
         margin-bottom: 5px;
+        color: white;
       }
       &__message {
         font-size: 11px;
@@ -57,13 +59,8 @@ body, html {
 }
 .gear {
   color: white;
-  float: right;
-  line-height: 100px;
-  margin-left: 5px;
-}
+}  
 .edit {
   color: white;
-  float: right;
-  line-height: 100px;
-  padding-left: 200px;
+  padding-left: 150px;
 }

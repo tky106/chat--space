@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   var buildMessageHTML = function(message) {
-    if (message.content && message.image.url) {
+    if (message.content && message.image) {
       var content = message.content
       var image = message.image
       var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
@@ -31,7 +31,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
               ${content}
             </div>
             <div>${noImage}</div>`
-} else if (message.image.url) {
+} else if (message.image) {
   var noContent = ""
   var image = message.image
 var html = `<div class="contents__right-content--right-box__test-date" data-id="${message.id}">
@@ -99,6 +99,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
       contentType: false
     })
     .done(function(data) {
+      console.log(data);
       var html = buildMessageHTML(data);
       $(".contents__right-content--right-box").append(html);
       $("#new_message")[0].reset();
@@ -112,7 +113,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
     })
   })
   // if path match = 正規表現 条件式 groups id 
-    setInterval(reloadMessages, 5000);
+  
 
 })
  

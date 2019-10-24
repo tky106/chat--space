@@ -6,10 +6,11 @@
     .contents__left-content--left-header
       %p.contents__left-content--left-header__left-header-text 
         = current_user.name
-        = link_to edit_user_path(current_user) do
-          = fa_icon "cog", class: "gear"
         = link_to new_group_path, method: :get do
           = fa_icon "pencil-square-o", class: "edit"
+        = link_to edit_user_path(current_user) do
+          = fa_icon "cog", class: "gear"
+        
 
     .contents__left-content--left-box
       - current_user.groups.each do |group|
@@ -25,6 +26,7 @@
       .contents__right-content--right-header__test-edit 
         .contents__right-content--right-header__test-edit--test 
           = @group.name
+        
         - @group.users.each do |user|
           %p.contents__right-content--right-header__member  
             = user.name
