@@ -113,7 +113,7 @@ var html = `<div class="contents__right-content--right-box__test-date" data-id="
     })
   })
   // if path match = 正規表現 条件式 groups id 
-  
+  setInterval(reloadMessages, 5000);
 
 })
  
